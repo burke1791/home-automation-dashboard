@@ -19,7 +19,7 @@ var config = {
   module: {
     rules: [
       {
-        test: /\.js$/i,
+        test: /\.jsx?$/i,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -35,14 +35,7 @@ var config = {
         test: /\.(c|le)ss$/i,
         use: [
           'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                localIdentName: '[local]__[hash:base64:5]'
-              }
-            }
-          },
+          'css-loader',
           'less-loader'
         ]
       }
